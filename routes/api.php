@@ -32,7 +32,7 @@ Route::middleware(['api','auth:sanctum'])->post('/update-account',[AuthControlle
 Route::middleware(['api','auth:sanctum'])->get('/get-brands',[brands_controller::class,'get_brands']);
 Route::middleware(['api','auth:sanctum'])->get('/get-products',[products_controller::class,'get_products']);
 Route::middleware(['api','auth:sanctum'])->get('/get-messages',[messages_controller::class,'get_messages']);
-Route::middleware(['api','auth:sanctum'])->post('/send-message',[messages_controller::class,'send_message']);
+Route::middleware(['api'])->post('/send-message',[messages_controller::class,'send_message']);
 Route::middleware(['api','auth:sanctum'])->get('/get-settings',[settings_controller::class,'get_settings']);
 Route::middleware(['api','auth:sanctum'])->post('/save-settings',[settings_controller::class,'save_settings']);
 Route::middleware(['api','auth:sanctum'])->post('/add-brand',[brands_controller::class,'add_brand']);

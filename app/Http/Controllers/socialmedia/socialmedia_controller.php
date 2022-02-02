@@ -20,6 +20,7 @@ class socialmedia_controller extends Controller
         $social->title = $request->title;
         $social->url = $request->url;
         $social->icon = $request->icon;
+        $social->color = $request->color;
 
         if($social->save()){
             return response()->json(['msg'=>'تم حفظ الموقع بنجاح'],200);
@@ -32,7 +33,9 @@ class socialmedia_controller extends Controller
          \App\Models\socialmedia_model::where('id',$request->id)->update([
             'title'=>$request->title,
             'url'=>$request->url,
-            'icon'=>$request->icon
+            'icon'=>$request->icon,
+            'color'=>$request->color,
+            
         ]);
 
             return response()->json(['msg'=>'تم تعديل الموقع بنجاح'],200);

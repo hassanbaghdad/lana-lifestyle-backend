@@ -21,6 +21,7 @@ class settings_controller extends Controller
             'website_title_en'=>$request->website_title_en,
             'website_email'=>$request->website_email,
             'website_phone'=>$request->website_phone,
+            'website_phone2'=>$request->website_phone2,
             'address'=>$request->address,
             'web1'=>$request->web1,
             'web2'=>$request->web2,

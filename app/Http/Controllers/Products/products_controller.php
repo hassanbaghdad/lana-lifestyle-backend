@@ -16,12 +16,13 @@ class products_controller extends Controller
         $products = products_model::all();
 
         $products = DB::select("SELECT * FROM products , brands where products.brand_id_fk = brands.brand_id");
+        
         return response()->json($products,200);
     }
     public function add_product(Request $request)
     {
         $product = new products_model();
-        if($request->product_slide == true)
+        if($request->product_slide == true || $request->product_slide == 1 ||  $request->product_slide=='1')
         {
             $request->product_slide=1;
         }else{
@@ -60,6 +61,13 @@ class products_controller extends Controller
 
     public function edit_product(Request $request)
     {
+        $product = new products_model();
+        if($request->product_slide == true && $request->product_slide == 1 && $request->product_slide=='1')
+        {
+            $request->product_slide=1;
+        }else{
+            $request->product_slide = 0;
+        }
         $product = new products_model();
         
          $product_slide = $request->product_slide ;
